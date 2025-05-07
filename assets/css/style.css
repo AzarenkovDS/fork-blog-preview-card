@@ -1,0 +1,152 @@
+@font-face {
+  font-family: "Figtree";
+  src: url("../../assets/fonts/Figtree-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-gray-500: rgb(107 107 107);
+  --color-gray-950: rgb(17 17 17);
+  --color-white: rgb(255 255 255);
+  --color-yellow: rgb(244 208 78);
+
+  --font-size-text-preset-1: 24px;
+  --font-size-text-preset-2: 16px;
+  --font-size-text-preset-3: 14px;
+
+  --spacing-100: 8px;
+  --spacing-150: 12px;
+  --spacing-200: 24px;
+  --spacing-50: 4px;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: var(--color-yellow);
+  font-family: Figtree, serif;
+}
+
+.card {
+  display: flex;
+  width: 384px;
+  padding: var(--spacing-200, 24px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-200, 24px);
+  flex-shrink: 0;
+
+  border-radius: 20px;
+  border: 1px solid var(--color-gray-950, #111);
+  background: var(--color-white, #fff);
+  box-shadow: 8px 8px 0px 0px #000;
+}
+
+.card > img {
+  border-radius: 10px;
+  background: var(--color-yellow, #f4d04e);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-150, 12px);
+  align-self: stretch;
+}
+
+.content h2,
+.content p {
+  margin: 0;
+}
+
+.content h2 {
+  color: var(--color-gray-950, #111);
+
+  font-size: var(--spacing-200, 24px);
+  font-weight: 800;
+  line-height: 150%;
+}
+
+.content p {
+  color: var(--color-gray-500, #6b6b6b);
+
+  font-size: var(--font-size-text-preset-2, 16px);
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.content .category {
+  padding: var(--spacing-50, 4px) var(--spacing-150, 12px);
+
+  border-radius: 4px;
+  background: var(--color-yellow, #f4d04e);
+
+  color: var(--color-gray-950, #111);
+
+  font-size: var(--font-size-text-preset-3, 14px);
+  font-weight: 800;
+  line-height: 150%;
+}
+
+.content .date {
+  color: var(--color-gray-950, #111);
+
+  font-size: var(--font-size-text-preset-3, 14px);
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-150, 12px);
+}
+
+.author img {
+  width: 32px;
+}
+
+.author p {
+  color: var(--color-gray-950, #111);
+
+  font-size: var(--font-size-text-preset-3, 14px);
+  font-weight: 800;
+  line-height: 150%;
+
+  margin: 0;
+}
+
+@media all and (max-width: 430px) {
+  .card {
+    width: 327px;
+  }
+
+  .card > img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .content h2 {
+    font-size: 20px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
+  .content .category,
+  .content .date {
+    font-size: 12px;
+  }
+}
